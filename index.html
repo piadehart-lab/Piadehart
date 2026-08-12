@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PiadehArt | پیاده</title>
+
+  <meta name="description"
+        content="وب‌سایت رسمی پیاده؛ شعر، موسیقی، هنر و سبک پیاده.">
+
+  <meta name="theme-color" content="#090909">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #090909;
+      color: #eeeeee;
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(circle at 50% 35%, #252525 0%, #111111 38%, #090909 72%);
+    }
+
+    .hero {
+      max-width: 850px;
+    }
+
+    .symbol {
+      font-size: 58px;
+      margin-bottom: 10px;
+      opacity: .85;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 13vw, 105px);
+      letter-spacing: 3px;
+      font-weight: 900;
+    }
+
+    .hero h2 {
+      color: #aaaaaa;
+      font-size: clamp(20px, 5vw, 32px);
+      font-weight: 400;
+      margin: 5px 0 25px;
+    }
+
+    .hero p {
+      color: #cccccc;
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .enter {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 10px 28px;
+      border: 1px solid #555;
+      border-radius: 40px;
+      transition: .3s;
+    }
+
+    .enter:hover {
+      background: #eeeeee;
+      color: #090909;
+    }
+
+    /* NAV */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(9,9,9,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 4px 8px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* SECTIONS */
+
+    section {
+      max-width: 1050px;
+      margin: auto;
+      padding: 90px 22px;
+    }
+
+    .title {
+      margin-bottom: 35px;
+    }
+
+    .title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .title span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .intro {
+      color: #bbb;
+      font-size: 18px;
+      max-width: 800px;
+    }
+
+    /* CARDS */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #242424;
+      border-radius: 18px;
+      padding: 28px 22px;
+      min-height: 160px;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #555;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* PIadeh */
+
+    .quote {
+      border-right: 3px solid #555;
+      padding: 25px;
+      margin-top: 30px;
+      color: #ddd;
+      font-size: 22px;
+    }
+
+    /* PIadehYar */
+
+    .yar {
+      background: linear-gradient(135deg, #151515, #0c0c0c);
+      border: 1px solid #292929;
+      border-radius: 25px;
+      padding: 40px 25px;
+      text-align: center;
+    }
+
+    .yar .face {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .yar h3 {
+      font-size: 30px;
+    }
+
+    .yar p {
+      color: #aaa;
+      margin: 10px auto 25px;
+      max-width: 650px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid #555;
+      border-radius: 30px;
+      padding: 8px 24px;
+      color: #ddd;
+    }
+
+    /* SOCIAL */
+
+    .social a {
+      border: 1px solid #292929;
+      padding: 12px 18px;
+      border-radius: 12px;
+      display: block;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+
+    .social a:hover {
+      color: white;
+      border-color: #555;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #222;
+      text-align: center;
+      padding: 50px 20px;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .signature {
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 65px 18px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .quote {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <header id="home">
+    <div class="hero">
+
+      <div class="symbol">✦</div>
+
+      <h1>پیاده</h1>
+
+      <h2>PiadehArt</h2>
+
+      <p>
+        از بیراهه‌ها می‌آیم؛
+        نه برای ماندن،
+        برای گفتن.
+      </p>
+
+      <a class="enter" href="#about">
+        ورود به جهان پیاده ↓
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="#home">خانه</a>
+    <a href="#about">پیاده</a>
+    <a href="#works">آثار</a>
+    <a href="#music">موسیقی</a>
+    <a href="#yar">پیاده‌یار</a>
+    <a href="#contact">ارتباط</a>
+  </nav>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="title">
+      <h2>پیاده چیست؟</h2>
+      <span>Piadeh</span>
+    </div>
+
+    <p class="intro">
+      پیاده فقط یک نام نیست؛
+      یک شیوهٔ دیدن است.
+      راهی برای عبور از قالب‌های آشنا،
+      شکستن سکوت‌های عادت‌کرده
+      و گفتن چیزی که شاید نباید گفته می‌شد.
+    </p>
+
+    <div class="quote">
+      «پیاده، از راه نمی‌گذرد؛
+      راه، خودش را از پیاده پیدا می‌کند.»
+    </div>
+
+  </section>
+
+
+  <!-- WORKS -->
+
+  <section id="works">
+
+    <div class="title">
+      <h2>آثار</h2>
+      <span>شعر • ترانه • تصویر • نوشته</span>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>شعرها</h3>
+        <p>
+          شعرها و قطعاتی از جهان پیاده.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>ترانه‌ها</h3>
+        <p>
+          روایت‌هایی که میان شعر و صدا قدم می‌زنند.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>تصاویر</h3>
+        <p>
+          جهان تصویری PiadehArt؛
+          تاریک، خام، انسانی.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>نوشته‌ها</h3>
+        <p>
+          مقاله‌ها، یادداشت‌ها و نگاه‌های پیاده.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MUSIC -->
+
+  <section id="music">
+
+    <div class="title">
+      <h2>موسیقی</h2>
+      <span>صدای پیاده</span>
+    </div>
+
+    <p class="intro">
+      موسیقی در پیاده فقط پس‌زمینه نیست؛
+      گاهی خودش ادامهٔ شعر است.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>SoundCloud</h3>
+        <p>
+          آثار صوتی و موسیقی‌های پیاده.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>YouTube</h3>
+        <p>
+          اجراها، ویدئوها و پروژه‌های تصویری.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PIADEHYAR -->
+
+  <section id="yar">
+
+    <div class="title">
+      <h2>پیاده‌یار</h2>
+      <span>PiadehYar</span>
+    </div>
+
+    <div class="yar">
+
+      <div class="face">◉</div>
+
+      <h3>پیاده‌یار</h3>
+
+      <p>
+        انسان است، نه ماشین.
+        خطا می‌کند، می‌خندد، سکوت می‌کند؛
+        اما همیشه ادامه می‌دهد...
+        چون هنوز در راه است.
+      </p>
+
+      <a class="button" href="#">
+        ورود به پیاده‌یار
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="title">
+      <h2>ارتباط</h2>
+      <span>PiadehArt</span>
+    </div>
+
+    <div class="social">
+
+      <a href="mailto:piadehart@gmail.com">
+        ✉️ piadehart@gmail.com
+      </a>
+
+      <a href="https://www.instagram.com/piadehart" target="_blank">
+        ◎ Instagram / @piadehart
+      </a>
+
+      <a href="https://www.youtube.com/@PiadehArt" target="_blank">
+        ▶ YouTube / @PiadehArt
+      </a>
+
+      <a href="https://x.com/piadehlrani" target="_blank">
+        𝕏 X / @piadehlrani
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      © 2026 PiadehArt
+    </div>
+
+    <div class="signature">
+      پیاده؛ از بیراهه‌ها، برای گفتن.
+    </div>
+
+  </footer>
+
+</body>
+</html>
