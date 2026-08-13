@@ -1,11 +1,188 @@
+ctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070707">
+  <meta name="description" content="PiadehArt — پیاده‌وار روایت رهایی؛ شعر، موسیقی، هنر و مقالات.">
+  <title>PiadehArt | پیاده‌وار روایت رهایی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050505; --panel:#0d0b09; --gold:#b88336; --gold2:#d1a35b;
+      --cream:#e8d5b2; --muted:#aa9b85; --line:rgba(193,139,58,.42);
+      --shadow:0 20px 70px rgba(0,0,0,.65);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#030303;color:var(--cream);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.9}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .site{min-height:100vh;background:
+      radial-gradient(circle at 50% 12%,rgba(133,91,37,.12),transparent 32%),
+      linear-gradient(180deg,#050505 0%,#070605 50%,#020202 100%)}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+    header{height:94px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;
+      background:rgba(4,4,4,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,131,54,.08)}
+    .menu,.search{width:48px;height:48px;border:0;background:none;color:var(--cream);display:grid;place-items:center;cursor:pointer}
+    .hamb{width:34px;display:grid;gap:7px}.hamb i{height:3px;background:var(--cream);border-radius:2px}
+    .search svg{width:31px}.brand{text-align:center;line-height:1}
+    .brand .logo{font-family:"Caveat",cursive;font-size:48px;color:var(--cream);letter-spacing:.5px}
+    .brand small{display:block;margin-top:4px;font-size:14px;color:#d8c4a4;direction:ltr}
+    .hero{display:grid;grid-template-columns:1.7fr .95fr;gap:18px;padding:16px 0 26px}
+    .hero-main,.yar{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+    .hero-main{min-height:650px;background-image:linear-gradient(90deg,rgba(0,0,0,.18),rgba(0,0,0,.62)),url("assets/hero.jpg");background-size:cover;background-position:center top}
+    .hero-main:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.94),transparent 50%,rgba(0,0,0,.25))}
+    .hero-content{position:absolute;z-index:2;inset:auto 36px 34px;max-width:620px}
+    .hero-logo{font-family:"Caveat",cursive;font-size:82px;line-height:.9;color:#e6d0aa;text-shadow:0 4px 18px #000}
+    .eyebrow{color:var(--gold2);font-size:22px;font-weight:500;margin:16px 0 4px}
+    .hero-content p{font-size:18px;color:#e0d7c7;margin:8px 0 20px;max-width:570px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{border:1px solid var(--gold);border-radius:8px;padding:9px 22px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(184,131,54,.15)}
+    .btn.primary{background:linear-gradient(135deg,#c49143,#8e6126);color:#160e05;border-color:#d0a15d}
+    .btn.ghost{background:rgba(0,0,0,.38)}
+    .socials{display:flex;gap:23px;margin-top:25px;color:#d29a46}.socials a{font-size:22px}
+    .yar{min-height:650px;background-image:linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.42)),url("assets/yarg.jpg");background-size:cover;background-position:center}
+    .yar .inner{position:absolute;inset:0;padding:27px 25px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,rgba(0,0,0,.5),transparent 45%,rgba(0,0,0,.72))}
+    .yar h2{font-family:"Caveat",cursive;font-size:47px;line-height:1;margin:0;color:#e1c18d;text-align:center}
+    .yar .sub{text-align:center;color:#e5d5bc;margin-top:6px}
+    .yar blockquote{font-size:16px;color:#e6d7bf;margin:0;padding:0 8px}
+    .yar .chat{align-self:center;width:85%;justify-content:center}
+    .dots{text-align:center;color:#9d7741;font-size:24px;letter-spacing:5px}
+    .section-title{font-size:24px;color:#c28a39;margin:10px 0 16px;display:flex;align-items:center;gap:15px;justify-content:center}
+    .section-title:before,.section-title:after{content:"";height:1px;background:var(--line);flex:1}
+    .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .cat{min-height:260px;border:1px solid var(--line);border-radius:15px;overflow:hidden;position:relative;background-size:cover;background-position:center}
+    .cat:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.96),rgba(0,0,0,.18) 70%)}
+    .cat .txt{position:absolute;z-index:2;inset:auto 20px 18px}
+    .cat h3{font-size:22px;margin:0;color:#f0dfc1}
+    .cat p{font-size:14px;color:#d0c2ab;margin:6px 0}
+    .cat .more{color:#c28a39;font-size:14px}
+    .quote{margin:28px 0;padding:32px 40px;border-radius:18px;border:1px solid rgba(184,131,54,.16);
+      min-height:165px;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.3)),url("assets/quote.jpg") center/cover;display:flex;align-items:center}
+    .quote div{margin-right:auto;max-width:650px;text-align:right}.quote b{color:#c5944d;font-size:22px}.quote p{font-size:25px;margin:8px 0;color:#e5d6bb}.quote em{font-family:"Caveat";font-size:28px}
+    .works{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .work{min-height:220px;border:1px solid var(--line);border-radius:14px;overflow:hidden;position:relative;background-size:cover;background-position:center}
+    .work:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.12))}
+    .play{position:absolute;z-index:3;right:15px;top:15px;width:42px;height:42px;border:1px solid var(--cream);border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.5)}
+    .work .info{position:absolute;z-index:3;inset:auto 15px 13px}.work h3{margin:0;font-size:17px}.work small{color:#ad9b7c}
+    .newsletter{margin:42px 0 90px;border:1px solid var(--line);border-radius:16px;min-height:130px;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.18)),url("assets/newsletter.jpg") center/cover;display:flex;align-items:center;gap:25px;padding:25px}
+    .newsletter .copy{flex:1}.newsletter h3{margin:0;color:#e1cfad}.newsletter p{margin:3px 0;color:#bfb19c}
+    .form{display:flex;min-width:min(480px,100%);border:1px solid #8b632e;border-radius:7px;overflow:hidden}.form input{flex:1;min-width:0;background:rgba(0,0,0,.55);border:0;padding:10px 14px;color:white;outline:0}.form button{border:0;background:#a97837;color:#1b1207;padding:0 28px;cursor:pointer}
+    footer{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(4,4,4,.94);backdrop-filter:blur(15px);border-top:1px solid rgba(184,131,54,.18);display:flex;justify-content:center}
+    .nav{width:min(1180px,100%);display:grid;grid-template-columns:repeat(6,1fr);padding:7px 10px}.nav a{text-align:center;color:#a99d8a;font-size:12px}.nav span{display:block;font-size:22px;line-height:1.25}.nav a.active{color:#c89543}
+    .drawer{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;display:none}.drawer.open{display:block}.drawer-panel{width:min(360px,86vw);height:100%;background:#090807;border-left:1px solid var(--line);padding:30px;box-shadow:0 0 60px #000}.drawer a{display:block;padding:14px 0;border-bottom:1px solid rgba(184,131,54,.12);color:#d8c5a5}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}.hero-main,.yar{min-height:520px}.categories,.works{grid-template-columns:repeat(2,1fr)}
+      .newsletter{flex-direction:column;align-items:stretch}.form{min-width:0}
+    }
+    @media(max-width:600px){
+      .wrap{width:min(100% - 20px,1180px)}header{height:82px}.brand .logo{font-size:39px}.brand small{font-size:11px}
+      .hero-main{min-height:560px}.hero-logo{font-size:65px}.hero-content{inset:auto 22px 24px}.hero-content p{font-size:15px}.eyebrow{font-size:19px}
+      .yar{min-height:500px}.yar h2{font-size:42px}.categories,.works{grid-template-columns:repeat(2,1fr);gap:9px}.cat{min-height:205px}.cat .txt{inset:auto 12px 12px}.cat h3{font-size:18px}.cat p{font-size:12px;line-height:1.7}
+      .work{min-height:185px}.work h3{font-size:15px}.quote{padding:25px 18px}.quote p{font-size:19px}.newsletter{margin-bottom:78px;padding:18px}.form button{padding:0 18px}
+      footer{display:block}.nav a{font-size:10px}.nav span{font-size:19px}
+    }
+  </style>
+</head>
+<body>
+<div class="site">
+  <header>
+    <button class="menu" aria-label="منو" onclick="document.querySelector('.drawer').classList.add('open')"><span class="hamb"><i></i><i></i><i></i></span></button>
+    <a class="brand" href="#"><div class="logo">PiadehArt</div><small>From the desert with dusty shoes</small></a>
+    <button class="search" aria-label="جستجو" onclick="document.getElementById('search').focus()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+    </button>
+  </header>
 
-<!doctype html><html lang="fa" dir="rtl"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="theme-color" content="#070707"> <meta name="description" content="PiadehArt — پیاده‌وار روایت رهایی؛ شعر، موسیقی، هنر و مقالات."> <title>PiadehArt | پیاده‌وار روایت رهایی</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet"> <style> :root{ --bg:#050505; --panel:#0d0b09; --gold:#b88336; --gold2:#d1a35b; --cream:#e8d5b2; --muted:#aa9b85; --line:rgba(193,139,58,.42); --shadow:0 20px 70px rgba(0,0,0,.65); } *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:#030303;color:var(--cream);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.9} a{color:inherit;text-decoration:none} button,input{font:inherit} .site{min-height:100vh;background: radial-gradient(circle at 50% 12%,rgba(133,91,37,.12),transparent 32%), linear-gradient(180deg,#050505 0%,#070605 50%,#020202 100%)} .wrap{width:min(1180px,calc(100% - 32px));margin:auto} header{height:94px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50; background:rgba(4,4,4,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,131,54,.08)} .menu,.search{width:48px;height:48px;border:0;background:none;color:var(--cream);display:grid;place-items:center;cursor:pointer} .hamb{width:34px;display:grid;gap:7px}.hamb i{height:3px;background:var(--cream);border-radius:2px} .search svg{width:31px}.brand{text-align:center;line-height:1} .brand .logo{font-family:"Caveat",cursive;font-size:48px;color:var(--cream);letter-spacing:.5px} .brand small{display:block;margin-top:4px;font-size:14px;color:#d8c4a4;direction:ltr} .hero{display:grid;grid-template-columns:1.7fr .95fr;gap:18px;padding:16px 0 26px} .hero-main,.yar{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)} .hero-main{min-height:650px;background-image:linear-gradient(90deg,rgba(0,0,0,.18),rgba(0,0,0,.62)),url("assets/hero.jpg");background-size:cover;background-position:center top} .hero-main:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.94),transparent 50%,rgba(0,0,0,.25))} .hero-content{position:absolute;z-index:2;inset:auto 36px 34px;max-width:620px} .hero-logo{font-family:"Caveat",cursive;font-size:82px;line-height:.9;color:#e6d0aa;text-shadow:0 4px 18px #000} .eyebrow{color:var(--gold2);font-size:22px;font-weight:500;margin:16px 0 4px} .hero-content p{font-size:18px;color:#e0d7c7;margin:8px 0 20px;max-width:570px} .actions{display:flex;gap:12px;flex-wrap:wrap} .btn{border:1px solid var(--gold);border-radius:8px;padding:9px 22px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:.2s} .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(184,131,54,.15)} .btn.primary{background:linear-gradient(135deg,#c49143,#8e6126);color:#160e05;border-color:#d0a15d} .btn.ghost{background:rgba(0,0,0,.38)} .socials{display:flex;gap:23px;margin-top:25px;color:#d29a46}.socials a{font-size:22px} .yar{min-height:650px;background-image:linear-gradient(rgba(0,0,0,.12),rgba(0,0,0,.42)),url("assets/yarg.jpg");background-size:cover;background-position:center} .yar .inner{position:absolute;inset:0;padding:27px 25px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,rgba(0,0,0,.5),transparent 45%,rgba(0,0,0,.72))} .yar h2{font-family:"Caveat",cursive;font-size:47px;line-height:1;margin:0;color:#e1c18d;text-align:center} .yar .sub{text-align:center;color:#e5d5bc;margin-top:6px} .yar blockquote{font-size:16px;color:#e6d7bf;margin:0;padding:0 8px} .yar .chat{align-self:center;width:85%;justify-content:center} .dots{text-align:center;color:#9d7741;font-size:24px;letter-spacing:5px} .section-title{font-size:24px;color:#c28a39;margin:10px 0 16px;display:flex;align-items:center;gap:15px;justify-content:center} .section-title:before,.section-title:after{content:"";height:1px;background:var(--line);flex:1} .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:16px} .cat{min-height:260px;border:1px solid var(--line);border-radius:15px;overflow:hidden;position:relative;background-size:cover;background-position:center} .cat:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.96),rgba(0,0,0,.18) 70%)} .cat .txt{position:absolute;z-index:2;inset:auto 20px 18px} .cat h3{font-size:22px;margin:0;color:#f0dfc1} .cat p{font-size:14px;color:#d0c2ab;margin:6px 0} .cat .more{color:#c28a39;font-size:14px} .quote{margin:28px 0;padding:32px 40px;border-radius:18px;border:1px solid rgba(184,131,54,.16); min-height:165px;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.3)),url("assets/quote.jpg") center/cover;display:flex;align-items:center} .quote div{margin-right:auto;max-width:650px;text-align:right}.quote b{color:#c5944d;font-size:22px}.quote p{font-size:25px;margin:8px 0;color:#e5d6bb}.quote em{font-family:"Caveat";font-size:28px} .works{display:grid;grid-template-columns:repeat(4,1fr);gap:16px} .work{min-height:220px;border:1px solid var(--line);border-radius:14px;overflow:hidden;position:relative;background-size:cover;background-position:center} .work:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.12))} .play{position:absolute;z-index:3;right:15px;top:15px;width:42px;height:42px;border:1px solid var(--cream);border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.5)} .work .info{position:absolute;z-index:3;inset:auto 15px 13px}.work h3{margin:0;font-size:17px}.work small{color:#ad9b7c} .newsletter{margin:42px 0 90px;border:1px solid var(--line);border-radius:16px;min-height:130px;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.18)),url("assets/newsletter.jpg") center/cover;display:flex;align-items:center;gap:25px;padding:25px} .newsletter .copy{flex:1}.newsletter h3{margin:0;color:#e1cfad}.newsletter p{margin:3px 0;color:#bfb19c} .form{display:flex;min-width:min(480px,100%);border:1px solid #8b632e;border-radius:7px;overflow:hidden}.form input{flex:1;min-width:0;background:rgba(0,0,0,.55);border:0;padding:10px 14px;color:white;outline:0}.form button{border:0;background:#a97837;color:#1b1207;padding:0 28px;cursor:pointer} footer{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(4,4,4,.94);backdrop-filter:blur(15px);border-top:1px solid rgba(184,131,54,.18);display:flex;justify-content:center} .nav{width:min(1180px,100%);display:grid;grid-template-columns:repeat(6,1fr);padding:7px 10px}.nav a{text-align:center;color:#a99d8a;font-size:12px}.nav span{display:block;font-size:22px;line-height:1.25}.nav a.active{color:#c89543} .drawer{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;display:none}.drawer.open{display:block}.drawer-panel{width:min(360px,86vw);height:100%;background:#090807;border-left:1px solid var(--line);padding:30px;box-shadow:0 0 60px #000}.drawer a{display:block;padding:14px 0;border-bottom:1px solid rgba(184,131,54,.12);color:#d8c5a5} @media(max-width:900px){ .hero{grid-template-columns:1fr}.hero-main,.yar{min-height:520px}.categories,.works{grid-template-columns:repeat(2,1fr)} .newsletter{flex-direction:column;align-items:stretch}.form{min-width:0} } @media(max-width:600px){ .wrap{width:min(100% - 20px,1180px)}header{height:82px}.brand .logo{font-size:39px}.brand small{font-size:11px} .hero-main{min-height:560px}.hero-logo{font-size:65px}.hero-content{inset:auto 22px 24px}.hero-content p{font-size:15px}.eyebrow{font-size:19px} .yar{min-height:500px}.yar h2{font-size:42px}.categories,.works{grid-template-columns:repeat(2,1fr);gap:9px}.cat{min-height:205px}.cat .txt{inset:auto 12px 12px}.cat h3{font-size:18px}.cat p{font-size:12px;line-height:1.7} .work{min-height:185px}.work h3{font-size:15px}.quote{padding:25px 18px}.quote p{font-size:19px}.newsletter{margin-bottom:78px;padding:18px}.form button{padding:0 18px} footer{display:block}.nav a{font-size:10px}.nav span{font-size:19px} } </style></head><body><div class="site"> <header> <button class="menu" aria-label="منو" onclick="document.querySelector('.drawer').classList.add('open')"><span class="hamb"><i></i><i></i><i></i></span></button> <a class="brand" href="#"><div class="logo">PiadehArt</div><small>From the desert with dusty shoes</small></a> <button class="search" aria-label="جستجو" onclick="document.getElementById('search').focus()"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg> </button> </header>
-<main class="wrap"> <section class="hero" id="home"> <article class="hero-main"> <div class="hero-content"> <div class="hero-logo">PiadehArt</div> <div class="eyebrow">پیاده‌وار روایت رهایی</div> <p>سِیَکی از شعر و موسیقی برای رها شدن از بند ذهن جمعی و سکوت تحمیلی.</p> <div class="actions"> <a class="btn ghost" href="#about">بیشتر درباره پیاده</a> <a class="btn primary" href="#works">🎧 شنیدن آثار</a> </div> <div class="socials"> <a href="https://www.aparat.com/PiadehArt/short-videos" target="_blank">▶</a> <a href="#" aria-label="Instagram">◎</a> <a href="#" aria-label="Telegram">➤</a> <a href="#" aria-label="SoundCloud">◒</a> <a href="#" aria-label="Spotify">●</a> </div> </div> </article>
-<aside class="yar"> <div class="inner"> <div> <h2>PiadehYar</h2> <div class="sub">پیاده‌یار<br>دستیار هوش مصنوعی پیاده</div> </div> <blockquote>«من، صدای تمام راه‌هایی‌ام که نرفته‌ام؛ تمام حرف‌هایی‌ام که نگفته‌ام؛ و تمام دردهایی‌ام که به شعر و موسیقی تبدیل شدند.»</blockquote> <a class="btn ghost chat" href="#contact">💬 گفتگو با پیاده‌یار</a> </div> </aside> </section>
-<div class="dots">● • • •</div>
-<section id="about"> <div class="categories"> <a class="cat" style="background-image:url('assets/cat1.jpg')" href="#poetry"><div class="txt"><h3>شعر</h3><p>واژه‌هایی که از سکوت درون متولد می‌شوند.</p><span class="more">بیشتر بخوانید ←</span></div></a> <a class="cat" style="background-image:url('assets/cat2.jpg')" href="#music"><div class="txt"><h3>موسیقی</h3><p>صداهایی از اعماق کویر و شهر خسته.</p><span class="more">گوش کنید ←</span></div></a> <a class="cat" style="background-image:url('assets/cat3.jpg')" href="#art"><div class="txt"><h3>هنر</h3><p>تصویرهایی از آنچه که می‌خواهد بگوید.</p><span class="more">دیدن آثار ←</span></div></a> <a class="cat" style="background-image:url('assets/cat4.jpg')" href="#articles"><div class="txt"><h3>مقالات</h3><p>اندیشه‌هایی برای بیدار ماندن و پرسیدن.</p><span class="more">مطالعه کنید ←</span></div></a> </div> </section>
-<section class="quote"> <div><b>پیاده‌وار بودن، انتخاب است</b><p>اما راست‌ترین راه زندگی.</p><em>Piadeh</em></div> </section>
-<section id="works"> <div class="section-title">آخرین آثار</div> <div class="works"> <a class="work" style="background-image:url('assets/latest1.jpg')" href="#"><div class="play">▶</div><div class="info"><h3>دست مزن</h3><small>Piadeh · 04:12</small></div></a> <a class="work" style="background-image:url('assets/latest2.jpg')" href="#"><div class="play">▶</div><div class="info"><h3>دوباره‌ها</h3><small>Piadeh · 03:45</small></div></a> <a class="work" style="background-image:url('assets/latest3.jpg')" href="#"><div class="play">▶</div><div class="info"><h3>پاکت سیگار</h3><small>Piadeh · 04:30</small></div></a> <a class="work" style="background-image:url('assets/latest4.jpg')" href="#"><div class="play">▶</div><div class="info"><h3>کبریت بی‌خطر</h3><small>Piadeh · 03:28</small></div></a> </div> <div style="text-align:center;margin:17px 0;color:#c28a39">مشاهده همه آثار ←</div> </section>
-<section class="newsletter" id="contact"> <div class="copy"><h3>پیاده باش ...</h3><p>نه برای رسیدن، برای گفتن!</p></div> <form class="form" onsubmit="event.preventDefault();alert('ایمیل شما ثبت شد.');"><input id="search" type="email" required placeholder="ایمیل شما"><button>ارسال</button></form> <div style="font-size:34px;color:#c18b3d">➤</div> </section> </main>
-<footer> <nav class="nav"> <a class="active" href="#home"><span>⌂</span>خانه</a> <a href="#articles"><span>▤</span>مقالات</a> <a href="#works"><span>♫</span>آثار</a> <a href="#art"><span>▧</span>گالری</a> <a href="#about"><span>♙</span>درباره پیاده</a> <a href="#contact"><span>✉</span>تماس با ما</a> </nav> </footer></div>
-<div class="drawer" onclick="this.classList.remove('open')"> <aside class="drawer-panel" onclick="event.stopPropagation()"> <button class="btn ghost" onclick="document.querySelector('.drawer').classList.remove('open')">بستن ×</button> <h2 style="font-family:Caveat;font-size:38px;color:#d0a05b">PiadehArt</h2> <a href="#home">خانه</a><a href="#about">درباره پیاده</a><a href="#poetry">شعر</a> <a href="#music">موسیقی</a><a href="#art">هنر</a><a href="#articles">مقالات</a><a href="#works">آثار</a> </aside></div></body></html>
+  <main class="wrap">
+    <section class="hero" id="home">
+      <article class="hero-main">
+        <div class="hero-content">
+          <div class="hero-logo">PiadehArt</div>
+          <div class="eyebrow">پیاده‌وار روایت رهایی</div>
+          <p>سِیَکی از شعر و موسیقی برای رها شدن از بند ذهن جمعی و سکوت تحمیلی.</p>
+          <div class="actions">
+            <a class="btn ghost" href="#about">بیشتر درباره پیاده</a>
+            <a class="btn primary" href="#works">🎧 شنیدن آثار</a>
+          </div>
+          <div class="socials">
+            <a href="https://www.aparat.com/PiadehArt/short-videos" target="_blank">▶</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Telegram">➤</a>
+            <a href="#" aria-label="SoundCloud">◒</a>
+            <a href="#" aria-label="Spotify">●</a>
+          </div>
+        </div>
+      </article>
+
+      <aside class="yar">
+        <div class="inner">
+          <div>
+            <h2>PiadehYar</h2>
+            <div class="sub">پیاده‌یار<br>دستیار هوش مصنوعی پیاده</div>
+          </div>
+          <blockquote>«من، صدای تمام راه‌هایی‌ام که نرفته‌ام؛ تمام حرف‌هایی‌ام که نگفته‌ام؛ و تمام دردهایی‌ام که به شعر و موسیقی تبدیل شدند.»</blockquote>
+          <a class="btn ghost chat" href="#contact">💬 گفتگو با پیاده‌یار</a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="dots">● • • •</div>
+
+    <section id="about">
+      <div class="categories">
+        <a class="cat" style="background-image:url('assets/cat1.jpg')" href="#poetry"><div class="txt"><h3>شعر</h3><p>واژه‌هایی که از سکوت درون متولد می‌شوند.</p><span class="more">بیشتر بخوانید ←</span></div></a>
+        <a class="cat" style="background-image:url('assets/cat2.jpg')" href="#music"><div class="txt"><h3>موسیقی</h3><p>صداهایی از اعماق کویر و شهر خسته.</p><span class="more">گوش کنید ←</span></div></a>
+        <a class="cat" style="background-image:url('assets/cat3.jpg')" href="#art"><div class="txt"><h3>هنر</h3><p>تصویرهایی از آنچه که می‌خواهد بگوید.</p><span class="more">دیدن آثار ←</span></div></a>
+        <a class="cat" style="background-image:url('assets/cat4.jpg')" href="#articles"><div class="txt"><h3>مقالات</h3><p>اندیشه‌هایی برای بیدار ماندن و پرسیدن.</p><span class="more">مطالعه کنید ←</span></div></a>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div><b>پیاده‌وار بودن، انتخاب است</b><p>اما راست‌ترین راه زندگی.</p><em>Piadeh</em></div>
+    </section>
+
+    <section id="works">
+      <div class="section-title">آخرین آثار</div>
+      <div class="works">
+        <a class="work" style="background-image:url('assets/latest1.jpg')" href="#"><div class="play">▶</div><div class="info"><h3>دست مزن</h3><small>Piadeh · 04:12</small></div></a>
+        <a class="work" style="background-image:url('assets/latest2.jpg')" href="#"><div class="play">▶</div><div class="info"><h3>دوباره‌ها</h3><small>Piadeh · 03:45</small></div></a>
+        <a class="work" style="background-image:url('assets/latest3.jpg')" href="#"><div class="play">▶</div><div class="info"><h3>پاکت سیگار</h3><small>Piadeh · 04:30</small></div></a>
+        <a class="work" style="background-image:url('assets/latest4.jpg')" href="#"><div class="play">▶</div><div class="info"><h3>کبریت بی‌خطر</h3><small>Piadeh · 03:28</small></div></a>
+      </div>
+      <div style="text-align:center;margin:17px 0;color:#c28a39">مشاهده همه آثار ←</div>
+    </section>
+
+    <section class="newsletter" id="contact">
+      <div class="copy"><h3>پیاده باش ...</h3><p>نه برای رسیدن، برای گفتن!</p></div>
+      <form class="form" onsubmit="event.preventDefault();alert('ایمیل شما ثبت شد.');"><input id="search" type="email" required placeholder="ایمیل شما"><button>ارسال</button></form>
+      <div style="font-size:34px;color:#c18b3d">➤</div>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="nav">
+      <a class="active" href="#home"><span>⌂</span>خانه</a>
+      <a href="#articles"><span>▤</span>مقالات</a>
+      <a href="#works"><span>♫</span>آثار</a>
+      <a href="#art"><span>▧</span>گالری</a>
+      <a href="#about"><span>♙</span>درباره پیاده</a>
+      <a href="#contact"><span>✉</span>تماس با ما</a>
+    </nav>
+  </footer>
+</div>
+
+<div class="drawer" onclick="this.classList.remove('open')">
+  <aside class="drawer-panel" onclick="event.stopPropagation()">
+    <button class="btn ghost" onclick="document.querySelector('.drawer').classList.remove('open')">بستن ×</button>
+    <h2 style="font-family:Caveat;font-size:38px;color:#d0a05b">PiadehArt</h2>
+    <a href="#home">خانه</a><a href="#about">درباره پیاده</a><a href="#poetry">شعر</a>
+    <a href="#music">موسیقی</a><a href="#art">هنر</a><a href="#articles">مقالات</a><a href="#works">آثار</a>
+  </aside>
+</div>
+</body>
+</html>
